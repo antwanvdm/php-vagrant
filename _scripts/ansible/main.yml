@@ -1,0 +1,14 @@
+---
+- hosts: all
+  vars_files:
+    - vars.yml
+  become: true
+#yes order is still important dont change it
+  roles:
+    - { role: default/default-tools, when: enable_default_tools  }
+    - { role: default/nginx,         when: enable_nginx          }
+    - { role: default/php7,          when: enable_php7           }
+    - { role: default/php7-dev,      when: enable_php7-dev       }
+    - { role: default/phalcon3,      when: enable_phalcon3       }
+    - { role: default/mariadb,       when: enable_mariadb        }
+    - { role: default/composer,      when: enable_composer       }

@@ -1,0 +1,35 @@
+---
+# tasks file for default/nginx
+- name: Add apt key for nginx repository
+  apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
+- name: Add nginx apt repository
+  apt_repository: repo='deb http://nginx.org/packages/ubuntu/ xenial nginx' state=present filename='nginx'
+- name: Install nginx from apt repository
+  apt: name=nginx state=latest update_cache=yes
+- name: Stat /var/www to see if its a directory or a symlink
+  stat: path=/var/www
+  register: wwwdir
+- name: Removing default directory /var/www
+  become: true
+  file: state=absent path=/var/www
+  when: wwwdir.stat.isdir is defined and wwwdir.stat.isdir
+- name: Adding Symlink from /var/source/ to /var/www/
+  become: true
+  file: state=link src=/var/source path=/var/www
+- name: Removing default configuration
+  file: state=absent path=/etc/nginx/conf.d/default.conf
+
+- name: Ensure sites-enabled is there
+  file: state=directory path=/etc/nginx/sites-enabled
+- name: Ensure sites-available is there
+  file: state=directory path=/etc/nginx/sites-available
+- name: Adding Nginx config
+  template: src=nginx.conf dest=/etc/nginx/nginx.conf
+- name: Adding new host configuration to sites-available
+  template: src=host_template.conf dest=/etc/nginx/sites-available/{{ projectname }}.conf
+  notify:
+    - restart nginx
+- name: Symlinking host-configuration into sites-enabled
+  file: state=link src=/etc/nginx/sites-available/{{ projectname }}.conf dest=/etc/nginx/sites-enabled/{{ projectname }}.conf
+  notify:
+    - restart nginx

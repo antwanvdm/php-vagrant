@@ -1,0 +1,6 @@
+---
+# tasks file for default/ansible
+- name: Require PPA
+  apt_repository: repo='ppa:ansible/ansible' update=yes
+- name: Install Ansible
+  apt: name=ansible state=lastest

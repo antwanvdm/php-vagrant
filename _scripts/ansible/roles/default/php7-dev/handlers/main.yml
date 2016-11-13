@@ -1,0 +1,8 @@
+---
+# handlers file for default/php5
+- name: restart nginx
+  become: true
+  service: name=nginx state=restarted enabled=yes
+- name: restart php-fpm
+  become: true
+  service: name=php7.0-fpm state=restarted enabled=yes

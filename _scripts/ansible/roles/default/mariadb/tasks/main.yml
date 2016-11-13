@@ -1,0 +1,22 @@
+---
+# tasks file for default/mariadb
+
+- name: Install MariaDB (aka mysql)
+  apt: name=mariadb-server state=latest update_cache=yes
+- name: Set bind address to 0.0.0.0
+  lineinfile: dest=/etc/mysql/mariadb.conf.d/50-server.cnf regexp='^bind-address' line='bind-address = 0.0.0.0' state=present
+  notify: restart mariadb
+- name: Set MariaDB slow query log
+  ini_file: dest=/etc/mysql/mariadb.conf.d/50-server.cnf section=mysqld option=slow_query_log_file value=/var/log/mysql/mariadb-slow.log state=present
+  notify: restart mariadb
+- name: Install python mysql bindings for ansible
+  become: true
+  apt: name=python-mysqldb state=latest
+- name: Add Mariadb root user
+  mysql_user: check_implicit_admin=yes login_password=root login_user=root host=% name=root password=root priv=*.*:ALL,GRANT state=present
+  notify: restart mariadb
+- name: Add Mariadb root user
+  mysql_user: check_implicit_admin=yes login_password=root login_user=root host=localhost name=root password=root priv=*.*:ALL,GRANT state=present
+  notify: restart mariadb
+
+

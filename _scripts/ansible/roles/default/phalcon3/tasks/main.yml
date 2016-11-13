@@ -1,0 +1,19 @@
+---
+# tasks file for default/phalcon3
+
+
+- name: Add Phalcon 3.x.x aka stable Repository
+  become: true
+  apt_repository: mode=644 repo='ppa:phalcon/stable' state=present filename='phalcon'
+- name: Install phalcon
+  become: true
+  apt: name=php7.0-phalcon state=latest
+  register: installedphalcon
+  notify:
+    - restart php-fpm
+- name: Enable Phalcon
+  command: phpenmod phalcon creates=/etc/php/7.0/fpm/conf.d/20-phalcon.ini
+  when: installedphalcon.changed is defined and installedphalcon.changed
+
+
+

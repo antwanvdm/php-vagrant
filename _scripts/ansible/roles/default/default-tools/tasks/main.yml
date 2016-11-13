@@ -1,0 +1,24 @@
+---
+# tasks file for default/default-tools
+- name: Ensure config directories are present
+  become: true
+  file: dest={{ item }} state=directory
+  with_items:
+    - '/home/vagrant/.config/htop'
+    - '/root/.config/htop'
+
+- name: Install htop, dos2unix, git, sendmail
+  become: true
+  apt: name={{ item }} state=latest
+  with_items:
+    - htop
+    - dos2unix
+    - git
+    - sendmail
+- name: Install htop configuration
+  become: true
+  template: src=htop_template.conf dest={{ item }}
+  with_items:
+    - '/home/vagrant/.config/htop/htoprc'
+    - '/root/.config/htop/htoprc'
+#- name: Setting Nice Welcome Messages

@@ -1,0 +1,13 @@
+# Global (should be in global file of your system)
+*~
+.DS_Store
+
+# PhpStorm (JetBrains) specific
+.idea
+
+# Dependency managers (for this setup just composer)
+vendor/
+
+# Vagrant specific
+.vagrant/
+.vagrantuser

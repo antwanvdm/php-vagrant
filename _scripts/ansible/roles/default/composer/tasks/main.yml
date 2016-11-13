@@ -1,0 +1,17 @@
+---
+# tasks file for default/composer
+- name: Ensure local bin
+  become: true
+  file: dest=/usr/local/bin state=directory
+- name: Install Composer
+  become: true
+  shell: curl -sS https://getcomposer.org/installer | php
+  args:
+    chdir: /usr/local/bin
+    creates: /usr/local/bin/composer.phar
+- name: Set Excute bit
+  become: true
+  file: dest=/usr/local/bin/composer.phar mode=u+x state=file
+- name: Link Composer
+  become: true
+  file: state=link src=/usr/local/bin/composer.phar path=/usr/local/bin/composer
