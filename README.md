@@ -30,11 +30,11 @@ Check the _scripts/ansible/vars.yml to change current packages (for example: dis
 * For the next commands, make sure you'll use a linux supported (for Windows: Git bash) shell:
 
     ```
-    # Clone this repository
-    git clone https://github.com/***.git
+    # Clone this repository (after navigating to your dev folder)
+    git clone https://github.com/antwanvdm/php7-vagrant.git
     ...
     # Navigate in new project folder
-    cd ***.git
+    cd php7-vagrant
     ...
     # Create the .vagrantuser file (and check them afterwards)
     ./_scripts/create_vagrantuser_file.sh
