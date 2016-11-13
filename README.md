@@ -38,11 +38,11 @@ Check the _scripts/ansible/vars.yml to change current packages (for example: dis
     # Create the .vagrantuser file (and check them afterwards)
     ./_scripts/create_vagrantuser_file.sh
     ...
-    # Up the project
+    # Up the project (enter password in process for changing hosts file)
     vagrant up
     ```
 
-* Go to http://php7.dev to find your phpinfo() page
+* Go to http://php7-vagrant.dev to find your phpinfo() page
 * You're ready to develop inside the 'public' folder!
 
 ## Other References
@@ -54,4 +54,4 @@ Check the _scripts/ansible/vars.yml to change current packages (for example: dis
 
 ## Changelog
 ### v1.0.0
-* First version, tested on virtualbox 5.0.26 & vagrant 1.8.5
+* First version, tested on virtualbox 5.0.28 & vagrant 1.8.7
