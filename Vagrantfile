@@ -23,6 +23,14 @@ Vagrant.configure(2) do |config|
     projectname.vm.box = "boxcutter/ubuntu1604"
     projectname.vm.synced_folder projectdirectory_string, "/var/source", owner: "vagrant", group: "www-data"
 
+    # Bugfix for "Cable connected: off"
+    config.vm.provider :virtualbox do |vm|
+        vm.customize [
+            "modifyvm", :id,
+            "--cableconnected1", "on",
+        ]
+    end
+
     # Packages through ansible
     config.vm.provision "ansible_local" do |ansible|
         ansible.playbook = "_scripts/ansible/main.yml"

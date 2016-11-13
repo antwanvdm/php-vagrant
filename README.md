@@ -25,6 +25,7 @@ Check the _scripts/ansible/vars.yml to change current packages (for example: dis
     vagrant plugin install vagrant-hostmanager
     ```
 
+* Add 'ForwardAgent yes' as new line in your ~/.ssh/config file
 * For Windows users, download and install [Git](https://git-scm.com/download/win)
 * For the next commands, make sure you'll use a linux supported (for Windows: Git bash) shell:
 
@@ -53,5 +54,10 @@ Check the _scripts/ansible/vars.yml to change current packages (for example: dis
 * [Phalcon](https://phalconphp.com/en/)
 
 ## Changelog
+### v1.0.1
+* Added bugfix for ['cable connected issue'](https://lists.debian.org/debian-cloud/2016/09/msg00051.html)
+* Run 'sudo rm /opt/vagrant/embedded/bin/curl' if downloading the box fails
+* Updated documentation/comments
+
 ### v1.0.0
 * First version, tested on virtualbox 5.0.28 & vagrant 1.8.7
