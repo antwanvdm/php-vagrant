@@ -19,12 +19,15 @@ Check the _scripts/ansible/vars.yml to change current packages (for example: dis
 * Install [Virtualbox](https://www.virtualbox.org/wiki/Downloads) (needed to provide a virtual machine)
 * Install [Vagrant](https://www.vagrantup.com/) (easy base for development environments)
 * Install 2 plugins for vagrant, nugrant for .vagrantuser support & hostmanager to support a nice development URL instead of your IP
+
     ```
     vagrant plugin install nugrant
     vagrant plugin install vagrant-hostmanager
     ```
+
 * For Windows users, download and install [Git](https://git-scm.com/download/win)
 * For the next commands, make sure you'll use a linux supported (for Windows: Git bash) shell:
+
     ```
     # Clone this repository
     git clone https://github.com/***.git
@@ -38,6 +41,7 @@ Check the _scripts/ansible/vars.yml to change current packages (for example: dis
     # Up the project
     vagrant up
     ```
+
 * Go to http://php7.dev to find your phpinfo() page
 * You're ready to develop inside the 'public' folder!
 
