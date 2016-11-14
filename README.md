@@ -12,8 +12,9 @@ This package includes the following setup:
 * Default tools: htop, dos2unix, git & sendmail
 * Phalcon 3
 
-Everything is contained through [Ansible](https://www.ansible.com/) which allows you to add/change/remove packages for your own needs.
-Check the _scripts/ansible/vars.yml to change current packages (for example: disable phalcon or php7 dev tools)
+Everything is installed through [Ansible](https://www.ansible.com/) which allows you to add/change/remove packages for your own needs.
+Check the _scripts/ansible/vars.yml to change current packages (for example: disable phalcon or php7 dev tools).
+Or check the scripts/templates from the current packages if you require any changes within this structure.
 
 ## Install guide
 * Install [Virtualbox](https://www.virtualbox.org/wiki/Downloads) (needed to provide a virtual machine)
