@@ -7,14 +7,14 @@ This package includes the following setup:
 
 * Nginx web server
 * PHP7
-* PHP7 dev tools (settings in php.ini & xdebug installed)
+* PHP7 dev tools (settings in php.ini & xdebug (*IDE Key = PHPSTORM*) installed)
 * MariaDB database server
 * Composer
 * Default tools: htop, dos2unix, git & sendmail
 * Phalcon 3
 
-Everything is installed through [Ansible](https://www.ansible.com/) which allows you to 
-add/change/remove packages for your own needs. Check the _scripts/ansible/vars.yml to 
+Everything is installed through [ansible](https://www.ansible.com/) which allows you to 
+add/change/remove packages for your own needs. Check the **_scripts/ansible/vars.yml** to 
 change current packages (for example: disable phalcon or php7 dev tools). Or check the 
 scripts/templates from the current packages if you require any changes within this structure.
 
@@ -23,16 +23,16 @@ scripts/templates from the current packages if you require any changes within th
 virtual machine)
 * Install [Vagrant](https://www.vagrantup.com/) (easy base for development environments)
 * For Windows users, install [Git](https://git-scm.com/download/win)
-* Install 2 plugins for vagrant, nugrant for .vagrantuser support & hostmanager to support 
-a nice development URL instead of your IP (for Windows you can use 'Git bash')
+* Install 2 plugins for vagrant, **nugrant** for .vagrantuser support & **hostmanager** to 
+support a nice development URL instead of your IP (for Windows you can use 'Git bash')
 
     ```
     vagrant plugin install nugrant
     vagrant plugin install vagrant-hostmanager
     ```
 
-* Add 'ForwardAgent yes' as new line in your ~/.ssh/config file (optional, please file an 
-issue when things break without)
+* Add 'ForwardAgent yes' as new line in your **~/.ssh/config** file (optional, please file 
+an issue when things break without)
 * Enter the next commands to setup your project (for Windows you can use 'Git bash'):
 
     ```
