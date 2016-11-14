@@ -55,10 +55,15 @@ Or check the scripts/templates from the current packages if you require any chan
 * [Phalcon](https://phalconphp.com/en/)
 
 ## Changelog
+### v1.0.2
+* Cleaned up nginx/php7 configuration files
+* Fixed caching issues with non-php files
+* Updated documentation/comments
+
 ### v1.0.1
 * Added bugfix for ['cable connected issue'](https://lists.debian.org/debian-cloud/2016/09/msg00051.html)
 * Run 'sudo rm /opt/vagrant/embedded/bin/curl' if downloading the box fails
 * Updated documentation/comments
 
 ### v1.0.0
-* First version, tested on virtualbox 5.0.28 & vagrant 1.8.7
+* First version, tested on virtualbox 5.0.28, vagrant 1.8.7 and boxcutter/ubuntu1604 2.0.23
