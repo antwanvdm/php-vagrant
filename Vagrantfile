@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.define projectname_string do |projectname|
     # Load the base vagrant box
-    projectname.vm.box = "boxcutter/ubuntu1604"
+    projectname.vm.box = "bento/ubuntu-16.04"
     projectname.vm.synced_folder projectdirectory_string, "/var/source", owner: "vagrant", group: "www-data"
 
     # Bugfix for "Cable connected: off"
