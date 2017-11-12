@@ -8,7 +8,7 @@
   enable_mariadb:       true
   enable_phalcon3:      true
   enable_php7:          true
-  enable_php7-dev:      true
+  enable_php7_dev:      true
   enable_nginx:         true
 
 
