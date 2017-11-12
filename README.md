@@ -1,6 +1,6 @@
 # PHP7 Vagrant Box
 This box provides a basic box based on the 
-'[boxcutter/ubuntu1604](https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1604)' box.
+'[boxcutter/ubuntu1604](https://app.vagrantup.com/bento/boxes/ubuntu-16.04)' box.
 When cloned and installed you're ready to develop PHP7 based applications.
 
 This package includes the following setup:
@@ -27,12 +27,12 @@ virtual machine)
 support a nice development URL instead of your IP (for Windows you can use 'Git bash')
 
     ```
-    vagrant plugin install nugrant
     vagrant plugin install vagrant-hostmanager
+    vagrant plugin install nugrant
     ```
 
-* Add 'ForwardAgent yes' as new line in your **~/.ssh/config** file (optional, please file 
-an issue when things break without)
+* (Optional, please file an issue when things break without) Add 'ForwardAgent yes' as new 
+line in your **~/.ssh/config** file
 * Enter the next commands to setup your project (for Windows you can use 'Git bash'):
 
     ```
@@ -42,14 +42,18 @@ an issue when things break without)
     # Navigate in new project folder
     cd php7-vagrant
     ...
-    # Create the .vagrantuser file (and check them afterwards)
+    # Remove .git folder because we don't want to use this remote anyway
+    rm -rf .git
+    ...
+    # Create the .vagrantuser file (and check them afterwards.
+    # BEWARE: Currently needs a manual path fix on Windows!!
     ./_scripts/create_vagrantuser_file.sh
     ...
     # Up the project (enter password in process for changing hosts file)
     vagrant up
     ```
 
-* Go to http://php7-vagrant.dev to find your phpinfo() page
+* Go to http://php7-vagrant.local to find your phpinfo() page
 * You're ready to develop inside the 'public' folder!
 
 ## Other References
@@ -58,6 +62,13 @@ an issue when things break without)
 * [Composer](https://getcomposer.org/)
 * [Xdebug](https://xdebug.org/)
 * [Phalcon](https://phalconphp.com/en/)
+
+## Changelog
+### v1.0.3
+* Updated README
+* Updated local url to .local instead of .dev (Google Chrome future support)
+* Updated basebox to bento/ubuntu-16.04 instead of boxcutter/ubuntu1604 due to 404/403 errors
+* Tested on virtualbox 5.2.0, vagrant 2.0.1 and bento/ubuntu-16.04 v201710.25.0
 
 ## Changelog
 ### v1.0.2

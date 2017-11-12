@@ -39,8 +39,8 @@ Vagrant.configure(2) do |config|
         ansible.raw_arguments = ["--extra-vars='projectname="+projectname_string+"'"]
     end
 
-    # Set the Hostname (default = projectname +.dev)
-    projectname.vm.hostname = projectname_string+".dev"
+    # Set the Hostname (default = projectname +.local)
+    projectname.vm.hostname = projectname_string+".local"
 
     # Set the default ip (You cannot have multiple boxes running on the same host with the same ip)
     projectname.vm.network "private_network", ip: projectipaddress_string
