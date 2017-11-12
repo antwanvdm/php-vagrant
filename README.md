@@ -70,7 +70,6 @@ line in your **~/.ssh/config** file
 * Updated basebox to bento/ubuntu-16.04 instead of boxcutter/ubuntu1604 due to 404/403 errors
 * Tested on virtualbox 5.2.0, vagrant 2.0.1 and bento/ubuntu-16.04 v201710.25.0
 
-## Changelog
 ### v1.0.2
 * Cleaned up nginx/php7 configuration files
 * Fixed caching issues with non-php files
