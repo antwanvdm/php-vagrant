@@ -64,6 +64,9 @@ line in your **~/.ssh/config** file
 * [Phalcon](https://phalconphp.com/en/)
 
 ## Changelog
+### v1.0.5
+* Added php7.2-xml library, mainly because phpunit requires it.
+
 ### v1.0.4
 * Upgraded to bento/ubuntu-18.04, tested on virtualbox 5.2.18, vagrant 2.1.5
 * Upgraded to php7.2 versions, and removed mcrypt package for now (not available anymore..)

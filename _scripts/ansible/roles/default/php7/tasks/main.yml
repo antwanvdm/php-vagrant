@@ -10,6 +10,7 @@
     - php7.2-gd
     - php7.2-fpm
     - php7.2-mbstring
+    - php7.2-xml
 - name: Set sendmail_path to sendmail -t -i
   become: true
   ini_file: dest=/etc/php/7.2/fpm/php.ini section=PHP option=sendmail_path value='sendmail -t -i'
