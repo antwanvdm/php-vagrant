@@ -64,6 +64,9 @@ line in your **~/.ssh/config** file
 * [Phalcon](https://phalconphp.com/en/)
 
 ## Changelog
+### v1.0.6
+* Set a fixed number for the vagrant bento box to prevent composer issues
+
 ### v1.0.5
 * Added php7.2-xml library, mainly because phpunit requires it.
 
