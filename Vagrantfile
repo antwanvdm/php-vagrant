@@ -32,11 +32,14 @@ Vagrant.configure(2) do |config|
         ]
     end
 
+    # Bugfix to install ansible
+    config.vm.provision "shell",
+        inline: "echo Updating box to fix Ansible install crash && DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y -o DPkg::Options::=--force-confdef upgrade && echo Installing Ansible && apt-add-repository -y ppa:ansible/ansible &>/dev/null && apt-get -y install ansible aptitude &>/dev/null"
+
     # Packages through ansible
     config.vm.provision "ansible_local" do |ansible|
-        ansible.playbook = "_scripts/ansible/main.yml"
-        ansible.install = true
-        ansible.version = "latest"
+        ansible.playbook = "_scripts/vagrant/ansible/main.yml"
+        ansible.install = false
         ansible.raw_arguments = ["--extra-vars='projectname="+projectname_string+"'"]
     end
 

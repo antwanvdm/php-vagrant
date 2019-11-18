@@ -1,6 +1,6 @@
 # PHP7 Vagrant Box
 This box provides a basic box based on the 
-'[bento/ubuntu-16.04](https://app.vagrantup.com/bento/boxes/ubuntu-16.04)' box.
+'[bento/ubuntu-18.04](https://app.vagrantup.com/bento/boxes/ubuntu-18.04)' box.
 When cloned and installed you're ready to develop PHP7 based applications.
 
 This package includes the following setup:
