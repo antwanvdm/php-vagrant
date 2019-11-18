@@ -64,6 +64,9 @@ line in your **~/.ssh/config** file
 * [Phalcon](https://phalconphp.com/en/)
 
 ## Changelog
+### v1.0.7
+* Fix for ansible crash while trying to install
+
 ### v1.0.6
 * Set a fixed number for the vagrant bento box to prevent composer issues
 
