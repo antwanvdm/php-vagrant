@@ -38,7 +38,7 @@ Vagrant.configure(2) do |config|
 
     # Packages through ansible
     config.vm.provision "ansible_local" do |ansible|
-        ansible.playbook = "_scripts/vagrant/ansible/main.yml"
+        ansible.playbook = "_scripts/ansible/main.yml"
         ansible.install = false
         ansible.raw_arguments = ["--extra-vars='projectname="+projectname_string+"'"]
     end
