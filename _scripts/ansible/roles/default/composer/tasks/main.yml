@@ -7,6 +7,7 @@
   become: true
   shell: curl -sS https://getcomposer.org/installer | php
   args:
+    warn: false
     chdir: /usr/local/bin
     creates: /usr/local/bin/composer.phar
 - name: Set Excute bit

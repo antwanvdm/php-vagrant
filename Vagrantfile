@@ -20,8 +20,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.define projectname_string do |projectname|
     # Load the base vagrant box
-    projectname.vm.box = "bento/ubuntu-18.04"
-    projectname.vm.box_version = "201812.27.0"
+    projectname.vm.box = "bento/ubuntu-20.04"
+    projectname.vm.box_version = "202010.24.0"
     projectname.vm.synced_folder projectdirectory_string, "/var/source", owner: "vagrant", group: "www-data"
 
     # Bugfix for "Cable connected: off"
@@ -32,9 +32,9 @@ Vagrant.configure(2) do |config|
         ]
     end
 
-    # Bugfix to install ansible
+    # Bugfix to install ansible (ansible.install = true doesn't work)
     config.vm.provision "shell",
-        inline: "echo Updating box to fix Ansible install crash && DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y -o DPkg::Options::=--force-confdef upgrade && echo Installing Ansible && apt-add-repository -y ppa:ansible/ansible &>/dev/null && apt-get -y install ansible aptitude &>/dev/null"
+        inline: "echo Fix ansible install && apt-get update && apt-get install -y ansible"
 
     # Packages through ansible
     config.vm.provision "ansible_local" do |ansible|

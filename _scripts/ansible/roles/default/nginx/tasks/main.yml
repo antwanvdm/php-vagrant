@@ -1,9 +1,5 @@
 ---
 # tasks file for default/nginx
-- name: Add apt key for nginx repository
-  apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
-- name: Add nginx apt repository
-  apt_repository: repo='deb http://nginx.org/packages/ubuntu/ xenial nginx' state=present filename='nginx'
 - name: Install nginx from apt repository
   apt: name=nginx state=latest update_cache=yes
 - name: Stat /var/www to see if its a directory or a symlink

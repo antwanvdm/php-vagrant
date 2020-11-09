@@ -11,7 +11,7 @@
   notify: restart mariadb
 - name: Install python mysql bindings for ansible
   become: true
-  apt: name=python-mysqldb state=latest
+  apt: name=python3-mysqldb state=latest
 - name: Add Mariadb root user
   mysql_user: check_implicit_admin=yes login_password=root login_user=root host=% name=root password=root priv=*.*:ALL,GRANT state=present
   notify: restart mariadb

@@ -2,25 +2,24 @@
 # tasks file for default/php7-dev
 - name: Install Xdebug
   become: true
-  apt: name={{ item }} state=latest
-  with_items:
-    - php-xdebug
+  apt:
+    name: ['php-xdebug']
 - name: Set error_reporting to E_ALL
   become: true
-  ini_file: dest=/etc/php/7.2/fpm/php.ini section=PHP option=error_reporting value=E_ALL
+  ini_file: dest=/etc/php/7.4/fpm/php.ini section=PHP option=error_reporting value=E_ALL
 - name: Set display_errors to On
   become: true
-  ini_file: dest=/etc/php/7.2/fpm/php.ini section=PHP option=display_errors value=On
+  ini_file: dest=/etc/php/7.4/fpm/php.ini section=PHP option=display_errors value=On
 - name: Set display_startup_errors to On
   become: true
-  ini_file: dest=/etc/php/7.2/fpm/php.ini section=PHP option=display_startup_errors value=On
+  ini_file: dest=/etc/php/7.4/fpm/php.ini section=PHP option=display_startup_errors value=On
 
 - name: Place Xdebug File
   become: true
-  template: src=xdebug_template.conf dest=/etc/php/7.2/mods-available/xdebug.ini
+  template: src=xdebug_template.conf dest=/etc/php/7.4/mods-available/xdebug.ini
 - name: Enable Xdebug
   become: true
-  command: phpenmod xdebug creates=/etc/php/7.2/fpm/conf.d/20-xdebug.ini
+  command: phpenmod xdebug creates=/etc/php/7.4/fpm/conf.d/20-xdebug.ini
   notify:
     - restart nginx
     - restart php-fpm

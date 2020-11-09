@@ -1,6 +1,6 @@
 # PHP7 Vagrant Box
 This box provides a basic box based on the 
-'[bento/ubuntu-18.04](https://app.vagrantup.com/bento/boxes/ubuntu-18.04)' box.
+'[bento/ubuntu-20.04](https://app.vagrantup.com/bento/boxes/ubuntu-20.04)' box.
 When cloned and installed you're ready to develop PHP7 based applications.
 
 This package includes the following setup:
@@ -11,11 +11,10 @@ This package includes the following setup:
 * MariaDB database server
 * Composer
 * Default tools: htop, dos2unix, git & sendmail
-* Phalcon 3
 
 Everything is installed through [ansible](https://www.ansible.com/) which allows you to 
 add/change/remove packages for your own needs. Check the **_scripts/ansible/vars.yml** to 
-change current packages (for example: disable phalcon or php7 dev tools). Or check the 
+change current packages (for example: disable php7 dev tools). Or check the 
 scripts/templates from the current packages if you require any changes within this structure.
 
 ## Install guide
@@ -45,8 +44,8 @@ line in your **~/.ssh/config** file
     # Remove .git folder because we don't want to use this remote anyway
     rm -rf .git
     ...
-    # Create the .vagrantuser file (and check them afterwards.
-    # BEWARE: Currently needs a manual path fix on Windows!!
+    # Create the .vagrantuser file (and check them afterwards).
+    # BEWARE: Currently needs a manual path fix on Windows!! (the 'local_git_path')
     ./_scripts/create_vagrantuser_file.sh
     ...
     # Up the project (enter password in process for changing hosts file)
@@ -54,16 +53,24 @@ line in your **~/.ssh/config** file
     ```
 
 * Go to http://php7-vagrant.local to find your phpinfo() page
-* You're ready to develop inside the 'public' folder!
+* If it works, you're ready to develop inside the 'public' folder!
 
 ## Other References
+* [PHP](https://www.php.net/)
 * [Nginx](https://www.nginx.com/resources/wiki/)
 * [MariaDB](https://mariadb.org/)
 * [Composer](https://getcomposer.org/)
 * [Xdebug](https://xdebug.org/)
-* [Phalcon](https://phalconphp.com/en/)
 
 ## Changelog
+### v2.0.0
+* Upgraded to the Ubuntu 20.04 box
+* Upgraded PHP to PHP 7.4 (and all related packages / settings)
+* Fixed nginx location to install package from default repository
+* Tested with virtualbox 6.1.16 & vagrant 2.2.13
+* Removed Phalcon from the box to keep it as clean as possible for a base box
+* Clean up the mess in the ansible folders to have focus on what is required
+
 ### v1.0.7
 * Fix for ansible crash while trying to install
 
