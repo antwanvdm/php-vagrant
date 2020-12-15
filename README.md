@@ -63,6 +63,12 @@ line in your **~/.ssh/config** file
 * [Xdebug](https://xdebug.org/)
 
 ## Changelog
+### v2.1.0
+* Small fix for vagrant host-manager (host didn't get added), verified with vagrant 2.2.14 (!)
+Please note vagrant 2.2.13 will not work due to a minor issue in this version
+* Added ondrej/php repo to keep more up-to-date with PHP updates
+* Implemented xDebug 3 in template
+
 ### v2.0.0
 * Upgraded to the Ubuntu 20.04 box
 * Upgraded PHP to PHP 7.4 (and all related packages / settings)
