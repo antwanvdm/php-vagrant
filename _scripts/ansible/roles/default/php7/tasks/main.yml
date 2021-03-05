@@ -1,5 +1,9 @@
 ---
 # tasks file for default/php7
+- name: Installs the ppa:ondrej/php repo on Ubuntu systems
+  apt_repository:
+    repo: ppa:ondrej/php
+    update_cache: "true"
 - name: Install php7
   become: true
   apt:

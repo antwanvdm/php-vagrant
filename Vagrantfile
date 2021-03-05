@@ -47,7 +47,7 @@ Vagrant.configure(2) do |config|
     projectname.vm.hostname = projectname_string+".local"
 
     # Set the default ip (You cannot have multiple boxes running on the same host with the same ip)
-    projectname.vm.network "private_network", ip: projectipaddress_string
+    projectname.vm.network :private_network, ip: projectipaddress_string
 
     # Configure portforwarding for nginx (visit IP from client on the given port. Example: http://192.128.1.195:4567)
     projectname.vm.network :forwarded_port, host: 4567, guest: 80, auto_correct: true
