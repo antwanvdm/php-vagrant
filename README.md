@@ -1,4 +1,4 @@
-# PHP7 Vagrant Box
+# PHP Vagrant Box
 This box provides a basic box based on the 
 '[bento/ubuntu-20.04](https://app.vagrantup.com/bento/boxes/ubuntu-20.04)' box.
 When cloned and installed you're ready to develop PHP7 based applications.
@@ -6,16 +6,19 @@ When cloned and installed you're ready to develop PHP7 based applications.
 This package includes the following setup:
 
 * Nginx web server
-* PHP7
-* PHP7 dev tools (settings in php.ini & xdebug (*IDE Key = PHPSTORM*) installed)
+* PHP8
+* PHP8 dev tools (settings in php.ini & xdebug (*IDE Key = PHPSTORM*) installed)
 * MariaDB database server
 * Composer
 * Default tools: htop, dos2unix, git & sendmail
 
 Everything is installed through [ansible](https://www.ansible.com/) which allows you to 
 add/change/remove packages for your own needs. Check the **_scripts/ansible/vars.yml** to 
-change current packages (for example: disable php7 dev tools). Or check the 
+change current packages (for example: disable php dev tools). Or check the 
 scripts/templates from the current packages if you require any changes within this structure.
+
+*Note: The old PHP7 version can be found in the php7 branch. This won't be supported anymore,
+and neither receive any updates*
 
 ## Install guide
 * Install [Virtualbox](https://www.virtualbox.org/wiki/Downloads) (needed to provide a 
@@ -36,10 +39,10 @@ line in your **~/.ssh/config** file
 
     ```
     # Clone this repository (after navigating to your dev folder)
-    git clone https://github.com/antwanvdm/php7-vagrant.git
+    git clone https://github.com/antwanvdm/php-vagrant.git
     ...
     # Navigate in new project folder
-    cd php7-vagrant
+    cd php-vagrant
     ...
     # Remove .git folder because we don't want to use this remote anyway
     rm -rf .git
@@ -52,7 +55,7 @@ line in your **~/.ssh/config** file
     vagrant up
     ```
 
-* Go to http://php7-vagrant.local to find your phpinfo() page
+* Go to http://php-vagrant.local to find your phpinfo() page
 * If it works, you're ready to develop inside the 'public' folder!
 
 ## Other References

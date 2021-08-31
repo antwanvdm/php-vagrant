@@ -1,8 +1,8 @@
 ---
-# handlers file for default/php7
+# handlers file for default/php
 - name: restart nginx
   become: true
   service: name=nginx state=restarted enabled=yes
 - name: restart php-fpm
   become: true
-  service: name=php7.4-fpm state=restarted enabled=yes
+  service: name=php8.0-fpm state=restarted enabled=yes

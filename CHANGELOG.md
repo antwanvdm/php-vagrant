@@ -1,6 +1,9 @@
 # Changelog
 This file contains the documentation per tag release within this repository.
 
+## v3.0.0
+* Upgrade to PHP 8.0
+
 ## v2.1.1
 * Small fix to enable develop mode in xDebug
 * Move changelog to separate file

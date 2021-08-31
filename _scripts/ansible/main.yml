@@ -7,7 +7,7 @@
   roles:
     - { role: default/default-tools, when: enable_default_tools  }
     - { role: default/nginx,         when: enable_nginx          }
-    - { role: default/php7,          when: enable_php7           }
-    - { role: default/php7-dev,      when: enable_php7_dev       }
+    - { role: default/php,           when: enable_php            }
+    - { role: default/php-dev,       when: enable_php_dev        }
     - { role: default/mariadb,       when: enable_mariadb        }
     - { role: default/composer,      when: enable_composer       }
