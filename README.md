@@ -1,7 +1,7 @@
 # PHP Vagrant Box
 This box provides a basic box based on the 
 '[bento/ubuntu-20.04](https://app.vagrantup.com/bento/boxes/ubuntu-20.04)' box.
-When cloned and installed you're ready to develop PHP7 based applications.
+When cloned and installed you're ready to develop PHP based applications.
 
 This package includes the following setup:
 
