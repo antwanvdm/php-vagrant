@@ -33,9 +33,8 @@ support a nice development URL instead of your IP (for Windows you can use 'Git 
     vagrant plugin install nugrant
     ```
 
-* (Optional, please file an issue when things break without) Add 'ForwardAgent yes' as new 
-line in your **~/.ssh/config** file
-* Enter the next commands to setup your project (for Windows you can use 'Git bash'):
+* Enter the next commands in your terminal to set up your project
+(for Windows you can use 'Git bash'):
 
     ```
     # Clone this repository (after navigating to your dev folder)
@@ -47,8 +46,7 @@ line in your **~/.ssh/config** file
     # Remove .git folder because we don't want to use this remote anyway
     rm -rf .git
     ...
-    # Create the .vagrantuser file (and check them afterwards).
-    # BEWARE: Currently needs a manual path fix on Windows!! (the 'local_git_path')
+    # Create the .vagrantuser file (and check the contents afterwards!)
     ./_scripts/create_vagrantuser_file.sh
     ...
     # Up the project (enter password in process for changing hosts file)

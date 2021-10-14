@@ -9,7 +9,7 @@ cd ${current_dir}/../
 # Create .vagrantuser file (Rename parameters in file with dynamic magic)
 echo "Creating & replacing .vagrantuser file"
 project_name_dashes=$(echo ${PWD##*/} | sed 's/_/-/g')
-project_absolute_path=$(echo ${PWD})
+project_absolute_path=$(echo $(pwd -W 2>/dev/null || pwd))
 
 cat << EOF > .vagrantuser
 # Use only / slashes otherwise it will be interpreted as escape character
