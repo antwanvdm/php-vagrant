@@ -1,6 +1,9 @@
 # Changelog
 This file contains the documentation per tag release within this repository.
 
+## v3.0.1
+* Fixed some install copy & fixed bug for Windows user git path
+
 ## v3.0.0
 * Upgrade to PHP 8.0
 
