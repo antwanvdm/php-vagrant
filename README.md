@@ -39,16 +39,16 @@ support a nice development URL instead of your IP (for Windows you can use 'Git 
     ```
     # Clone this repository (after navigating to your dev folder)
     git clone https://github.com/antwanvdm/php-vagrant.git
-    ...
+    
     # Navigate in new project folder
     cd php-vagrant
-    ...
+    
     # Remove .git folder because we don't want to use this remote anyway
     rm -rf .git
-    ...
+    
     # Create the .vagrantuser file (and check the contents afterwards!)
     ./_scripts/create_vagrantuser_file.sh
-    ...
+    
     # Up the project (enter password in process for changing hosts file)
     vagrant up
     ```
