@@ -26,15 +26,14 @@ virtual machine)
 * Install [Vagrant](https://www.vagrantup.com/) (easy base for development environments)
 * For Windows users, install [Git](https://git-scm.com/download/win)
 * Install 2 plugins for vagrant, **nugrant** for .vagrantuser support & **hostmanager** to 
-support a nice development URL instead of your IP (for Windows you can use 'Git bash')
+support a nice development URL instead of your IP (Mac: use terminal, Windows: use 'Git bash')
 
     ```
     vagrant plugin install vagrant-hostmanager
     vagrant plugin install nugrant
     ```
 
-* Enter the next commands in your terminal to set up your project
-(for Windows you can use 'Git bash'):
+* Enter the next commands to set up your project (Mac: use terminal, Windows: use 'Git bash'):
 
     ```
     # Clone this repository (after navigating to your dev folder)
