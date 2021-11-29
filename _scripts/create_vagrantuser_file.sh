@@ -16,7 +16,7 @@ cat << EOF > .vagrantuser
 project:
     name: "${project_name_dashes}"
     local_git_path: "${project_absolute_path}"
-    provider: "virtualbox"
+    provider: "docker"
     ip_address: 192.168.50.5
     vagrant_max_memory: 2048
 EOF

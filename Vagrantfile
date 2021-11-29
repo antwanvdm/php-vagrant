@@ -20,16 +20,11 @@ Vagrant.configure(2) do |config|
 
   config.vm.define projectname_string do |projectname|
     # Load the base vagrant box
-    projectname.vm.box = "bento/ubuntu-20.04"
-    projectname.vm.box_version = "202010.24.0"
     projectname.vm.synced_folder projectdirectory_string, "/var/source", owner: "vagrant", group: "www-data"
 
     # Bugfix for "Cable connected: off"
-    config.vm.provider :virtualbox do |vm|
-        vm.customize [
-            "modifyvm", :id,
-            "--cableconnected1", "on",
-        ]
+    config.vm.provider "docker" do |vm|
+        vm.image = "ubuntu"
     end
 
     # Bugfix to install ansible (ansible.install = true doesn't work)
@@ -57,8 +52,6 @@ Vagrant.configure(2) do |config|
 
       # Set the allowed memory
       v.memory = config.user.project.vagrant_max_memory
-      # Set some option to allow windows to create symlinks for
-      v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
 
     end
   end

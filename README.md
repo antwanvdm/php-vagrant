@@ -1,6 +1,7 @@
 # PHP Vagrant Box
-This box provides a basic box based on the 
-'[bento/ubuntu-20.04](https://app.vagrantup.com/bento/boxes/ubuntu-20.04)' box.
+**For Virtualbox, please switch to the main branch**
+
+This box provides a basic box based on top of the docker ubuntu image.
 When cloned and installed you're ready to develop PHP based applications.
 
 This package includes the following setup:
@@ -21,7 +22,7 @@ scripts/templates from the current packages if you require any changes within th
 and neither receive any updates*
 
 ## Install guide
-* Install [Virtualbox](https://www.virtualbox.org/wiki/Downloads) (needed to provide a 
+* Install [Docker Desktop](https://www.docker.com/get-started) (needed to provide a 
 virtual machine)
 * Install [Vagrant](https://www.vagrantup.com/) (easy base for development environments)
 * For Windows users, install [Git](https://git-scm.com/download/win)
@@ -41,6 +42,9 @@ support a nice development URL instead of your IP (Mac: use terminal, Windows: u
     
     # Navigate in new project folder
     cd php-vagrant
+  
+    # Switch to the docker branch
+    git checkout docker
     
     # Remove .git folder because we don't want to use this remote anyway
     rm -rf .git
