@@ -1,4 +1,4 @@
-## PHP Vagrant Box
+# PHP Vagrant Box
 *2022-03-07*  
 Original repository: [antwanvdm/php-vagrant](https://github.com/antwanvdm/php-vagrant)  
 by [Antwan](https://github.com/antwanvdm)
@@ -19,7 +19,7 @@ Everything is installed through [ansible](https://www.ansible.com/) which allows
 
 *Note: The old PHP7 version can be found in the php7 branch. This won't be supported anymore and neither receive any updates*
 
-### Install Guide
+## Install Guide
 1. For Windows users, install [Git](https://git-scm.com/download/win)
 2. Install [Virtualbox](https://www.virtualbox.org/wiki/Downloads) (needed to provide a virtual machine)
 3. Install [Vagrant](https://www.vagrantup.com/) (easy base for development environments)
@@ -41,7 +41,7 @@ support a nice development URL instead of your IP (Mac: use terminal, Windows: u
 
 *Please submit an issue when things do not work after doing every step*
 
-### Setup Guide
+## Setup Guide
 1. Clone this repository (after navigating to your dev folder)
     ```bash
     git clone [repolink]
@@ -85,7 +85,7 @@ support a nice development URL instead of your IP (Mac: use terminal, Windows: u
     touch README.md CHANGELOG.md
     ```
 
-### Starting Vagrant 
+## Starting Vagrant 
 
 1. Open bash/terminal in local repository
 
@@ -94,11 +94,11 @@ support a nice development URL instead of your IP (Mac: use terminal, Windows: u
     vagrant up
     ```
 
-### Connecting
+## Connecting
 
 Open local website: `http://[repo].local`
 
-#### Connecting to database
+### Connecting to database
 
 In MySQL Workbench
 1. Click on `Setup New Connection`
@@ -106,14 +106,14 @@ In MySQL Workbench
 3. Set Hostname to the corresponding `ip_address` in the `.vagrantuser` file (default: `192.168.50.5`)
 4. Set Username & Password (default: `root`)-
 
-### Other References
+## Other References
 * [PHP](https://www.php.net/)
 * [Nginx](https://www.nginx.com/resources/wiki/)
 * [MariaDB](https://mariadb.org/)
 * [Composer](https://getcomposer.org/)
 * [Xdebug](https://xdebug.org/)
 
-## Changelog
+# Changelog
 Please see the [CHANGELOG.md](./CHANGELOG.md)
 
 
